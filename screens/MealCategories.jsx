@@ -15,8 +15,13 @@ function MealCategories({ navigation }) {
       data={CATEGORIES}
       numColumns={2}
       keyExtractor={(item) => item.id}
-      renderItem={({ item: { color, title } }) => (
-        <CategoryGridTile title={title} color={color} onPress={handlePress} />
+      renderItem={({ item: { color, title, id } }) => (
+        <CategoryGridTile
+          title={title}
+          color={color}
+          onPress={handlePress}
+          id={id}
+        />
       )}
     />
   );
