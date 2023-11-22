@@ -9,8 +9,11 @@ import {
 
 function MealItem({ title, affordability, complexity, imageUrl, duration }) {
   return (
-    <View>
-      <Pressable>
+    <View style={styles.container}>
+      <Pressable
+        style={({ pressed }) => (pressed ? styles.pressIos : null)}
+        android_ripple={{ color: "#f1f1f1" }}
+      >
         <Image source={{ uri: imageUrl }} />
         <View>
           <Text> {title} </Text>
@@ -47,6 +50,8 @@ const styles = StyleSheet.create({
     height: 200,
     objectFit: "cover",
   },
+
+  pressIos: { opacity: 0.75 },
 
   title: {
     textAlign: "center",
