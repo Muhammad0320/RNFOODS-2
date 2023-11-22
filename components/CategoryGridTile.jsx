@@ -1,11 +1,11 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-function CategoryGridTile() {
+function CategoryGridTile({ title }) {
   return (
     <View style={styles.gridItem}>
       <Pressable style={styles.container}>
         <View style={styles.innerContainer}>
-          <Text style={styles.t}> Lemme see you </Text>
+          <Text style={styles.gridText}> Lemme see you </Text>
         </View>
       </Pressable>
     </View>
