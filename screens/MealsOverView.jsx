@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 import { MEALS } from "../data/test-data";
+import MealItem from "../components/MealItem";
 
 function MealsOverView({ route }) {
   const { categoryId } = route.params;
@@ -9,11 +10,12 @@ function MealsOverView({ route }) {
     meal.categoryIds.includes(categoryId)
   );
 
-  console.log(mealItems);
-
   return (
     <View style={styles.container}>
-      <Text> The meals overview screen - {categoryId} </Text>
+      <FlatList
+        data={mealItems}
+        renderItem={({ item }) => <MealItem {...item} />}
+      />
     </View>
   );
 }
