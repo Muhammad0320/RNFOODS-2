@@ -12,7 +12,7 @@ function MealItem({ title, affordability, complexity, imageUrl, duration }) {
     <View style={styles.container}>
       <Pressable
         style={({ pressed }) => (pressed ? styles.pressIos : null)}
-        android_ripple={{ color: "#f1f1f1" }}
+        android_ripple={{ color: "#ccc" }}
       >
         <Image style={styles.image} source={{ uri: imageUrl }} />
         <View style={styles.textContainer}>
@@ -45,8 +45,9 @@ const styles = StyleSheet.create({
   },
 
   textContainer: {
-    marginVertical: 8,
-    marginHorizontal: 15,
+    marginVertical: 15,
+    rowGap: 8,
+    marginHorizontal: 20,
   },
 
   image: {
