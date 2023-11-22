@@ -12,7 +12,7 @@ function MealCategories() {
       //   key={Math.random()}
       keyExtractor={(item) => item.id}
       renderItem={({ item: { color, title } }) => (
-        <CategoryGridTile title={title} />
+        <CategoryGridTile title={title} color={color} />
       )}
     />
   );
