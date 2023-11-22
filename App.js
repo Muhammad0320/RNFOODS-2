@@ -11,7 +11,9 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator> </Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="MealCategories" component={MealCategories} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
