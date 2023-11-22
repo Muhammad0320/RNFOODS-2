@@ -14,10 +14,10 @@ function MealItem({ title, affordability, complexity, imageUrl, duration }) {
         style={({ pressed }) => (pressed ? styles.pressIos : null)}
         android_ripple={{ color: "#f1f1f1" }}
       >
-        <Image source={{ uri: imageUrl }} />
-        <View>
-          <Text> {title} </Text>
-          <View>
+        <Image style={styles.image} source={{ uri: imageUrl }} />
+        <View style={styles.textContainer}>
+          <Text style={styles.title}> {title} </Text>
+          <View style={styles.detailContainer}>
             <Text> {duration}m </Text>
             <Text> {complexity.toUpperCase()} </Text>
             <Text> {affordability.toUpperCase()} </Text>
@@ -33,8 +33,7 @@ export default MealItem;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    paddingVertical: 10,
-    paddingHorizontal: 15,
+
     borderRadius: 16,
     elevation: 5,
     shadowColor: "#000",
@@ -43,6 +42,11 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     overflow: Platform.OS === "android" ? "hidden" : "visible",
     margin: 16,
+  },
+
+  textContainer: {
+    marginVertical: 8,
+    marginHorizontal: 15,
   },
 
   image: {
