@@ -4,10 +4,9 @@ import { CATEGORIES } from "../data/test-data";
 
 function MealCategories({ navigation }) {
   const handlePress = (id) => {
-    navigation.navigate("MealOverview"),
-      {
-        categoryId: id,
-      };
+    console.log(id);
+
+    navigation.navigate("MealOverview", { categoryId: id });
   };
 
   return (
