@@ -67,11 +67,14 @@ const styles = StyleSheet.create({
 
   info: {
     color: "white",
+    marginVertical: 10,
   },
 
   title: {
+    textAlign: "center",
     color: "white",
     fontWeight: "bold",
     fontSize: 24,
+    marginVertical: 10,
   },
 });

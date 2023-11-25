@@ -16,9 +16,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 12,
     marginVertical: 4,
     borderBottomWidth: 3,
+    borderBottomColor: "#e2b497",
   },
 
   text: {
+    textAlign: "center",
     color: "#e2b497",
     fontSize: 18,
     fontWeight: "bold",
