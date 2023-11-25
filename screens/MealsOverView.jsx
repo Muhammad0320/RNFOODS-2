@@ -25,6 +25,7 @@ function MealsOverView({ route, navigation }) {
     <View style={styles.container}>
       <FlatList
         data={mealItems}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => <MealItem {...item} />}
       />
     </View>
