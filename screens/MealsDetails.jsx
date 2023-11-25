@@ -19,13 +19,14 @@ function MealsDetails({ route }) {
 
   return (
     <ScrollView style={styles.root}>
-      <Image source={{ uri: imageUrl }} />
-      <Text> {title} </Text>
+      <Image style={styles.image} source={{ uri: imageUrl }} />
+      <Text style={styles.title}> {title} </Text>
 
       <MealsInfo
         affordability={affordability}
         complexity={complexity}
         duration={duration}
+        style={styles.info}
       />
 
       <View style={styles.listContainerOuter}>
