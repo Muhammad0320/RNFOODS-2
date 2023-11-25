@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 function MealsInfo({ duration, complexity, affordability, style }) {
   return (
