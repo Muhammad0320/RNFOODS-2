@@ -13,12 +13,6 @@ function MealsInfo({ duration, complexity, affordability }) {
 export default MealsInfo;
 
 const styles = StyleSheet.create({
-  textContainer: {
-    marginVertical: 15,
-    rowGap: 8,
-    marginHorizontal: 20,
-  },
-
   detailContainer: {
     flexDirection: "row",
     columnGap: 6,
