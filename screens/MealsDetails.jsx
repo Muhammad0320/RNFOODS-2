@@ -1,6 +1,8 @@
-import { Image, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { MEALS } from "../data/test-data";
 import MealsInfo from "../components/MealsInfo";
+import Subtitle from "../components/details/subtitle";
+import List from "../components/details/List";
 
 function MealsDetails({ route }) {
   const { id } = route.params;
@@ -16,7 +18,7 @@ function MealsDetails({ route }) {
   } = MEALS.find((meals) => meals.id === id);
 
   return (
-    <View>
+    <ScrollView style={styles.root}>
       <Image source={{ uri: imageUrl }} />
       <Text> {title} </Text>
 
@@ -26,23 +28,49 @@ function MealsDetails({ route }) {
         duration={duration}
       />
 
-      <Text> Ingredient </Text>
+      <View style={styles.listContainerOuter}>
+        <View style={styles.listContainerInner}>
+          <Subtitle> Ingredients </Subtitle>
 
-      <View>
-        {ingredients.map((ingredient) => (
-          <Text key={ingredient}> {ingredient} </Text>
-        ))}
+          <List data={ingredients} />
+
+          <Subtitle> Steps </Subtitle>
+
+          <List data={steps} />
+        </View>
       </View>
-
-      <Text> Steps </Text>
-
-      <View>
-        {steps.map((ingredient) => (
-          <Text key={ingredient}> {ingredient} </Text>
-        ))}
-      </View>
-    </View>
+    </ScrollView>
   );
 }
 
 export default MealsDetails;
+
+const styles = StyleSheet.create({
+  root: {
+    marginBottom: 25,
+  },
+
+  image: {
+    width: "100%",
+    height: 350,
+  },
+
+  listContainerOuter: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  listContainerInner: {
+    width: "80%",
+  },
+
+  info: {
+    color: "white",
+  },
+
+  title: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 24,
+  },
+});
