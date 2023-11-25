@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-function subtitle({ children }) {
+function Subtitle({ children }) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}> {children} </Text>
@@ -8,7 +8,7 @@ function subtitle({ children }) {
   );
 }
 
-export default subtitle;
+export default Subtitle;
 
 const styles = StyleSheet.create({
   container: {
