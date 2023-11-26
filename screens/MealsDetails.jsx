@@ -3,8 +3,10 @@ import { MEALS } from "../data/test-data";
 import MealsInfo from "../components/MealsInfo";
 import Subtitle from "../components/details/subtitle";
 import List from "../components/details/List";
+import { useLayoutEffect } from "react";
+import IconButton from "../components/IconButton";
 
-function MealsDetails({ route }) {
+function MealsDetails({ route, navigation }) {
   const { id } = route.params;
 
   const {
@@ -16,6 +18,23 @@ function MealsDetails({ route }) {
     title,
     imageUrl,
   } = MEALS.find((meals) => meals.id === id);
+
+  const handleIconButtonPress = () => {
+    console.log("clicked");
+  };
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <IconButton
+          icon="star"
+          size={24}
+          color={"white"}
+          onPress={handleIconButtonPress}
+        />
+      ),
+    });
+  }, [handleIconButtonPress, navigation]);
 
   return (
     <ScrollView style={styles.root}>
