@@ -18,9 +18,13 @@ const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
+        drawerContentStyle: { backgroundColor: "#351401" },
         headerStyle: { backgroundColor: "#351401" },
+        headerTintColor: "#ccc",
         sceneContainerStyle: { backgroundColor: "#3f2f25" },
-        headerTintColor: "#fff",
+        drawerActiveBackgroundColor: "#3f2f25",
+        drawerInactiveTintColor: "#ccc",
+        drawerActiveTintColor: "#ccc",
       }}
     >
       <Drawer.Screen
@@ -48,7 +52,11 @@ export default function App() {
           component={DrawerNavigator}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="MealDetails" component={MealsDetails} />
+        <Stack.Screen
+          name="MealDetails"
+          component={MealsDetails}
+          options={{ title: "About the meal" }}
+        />
         <Stack.Screen name="MealOverview" component={MealsOverView} />
       </Stack.Navigator>
     </NavigationContainer>
