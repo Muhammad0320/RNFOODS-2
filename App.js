@@ -1,14 +1,10 @@
-import MealCategories from "./screens/MealCategories";
-
-import { NavigationContainer } from "@react-navigation/native";
-
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import { createDrawerNavigator } from "@react-navigation/drawer";
-
-import MealsOverView from "./screens/MealsOverView";
-import MealsDetails from "./screens/MealsDetails";
 import Favourites from "./screens/Favourites";
+import MealsDetails from "./screens/MealsDetails";
+import MealsOverView from "./screens/MealsOverView";
+import MealCategories from "./screens/MealCategories";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
