@@ -5,6 +5,7 @@ import Subtitle from "../components/details/subtitle";
 import List from "../components/details/List";
 import { useLayoutEffect } from "react";
 import IconButton from "../components/IconButton";
+import { useFavouriteContext } from "../store/context/FavouriteContext";
 
 function MealsDetails({ route, navigation }) {
   const { id } = route.params;
@@ -19,15 +20,23 @@ function MealsDetails({ route, navigation }) {
     imageUrl,
   } = MEALS.find((meals) => meals.id === id);
 
+  const { ids, addFavorite, removeFavorite } = useFavouriteContext();
+
+  const mealIsFavorite = ids.includes(id);
+
   const handleIconButtonPress = () => {
-    console.log("clicked");
+    if (mealIsFavorite) {
+      removeFavorite(id);
+    } else {
+      addFavorite(id);
+    }
   };
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
         <IconButton
-          icon="star"
+          icon={mealIsFavorite ? "star" : "star-outline"}
           size={24}
           color={"white"}
           onPress={handleIconButtonPress}
