@@ -3,8 +3,12 @@ import MealsList from "../components/meealsList/MealsList";
 import { MEALS } from "../data/test-data";
 import { useFavouriteContext } from "../store/context/FavouriteContext";
 
+import { useSelector } from "react-redux";
+
 function Favourites() {
-  const { ids } = useFavouriteContext();
+  // const { ids } = useFavouriteContext();
+
+  const { ids } = useSelector((state) => state.favourite);
 
   if (!ids.length) {
     return (
