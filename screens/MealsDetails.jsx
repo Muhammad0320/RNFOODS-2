@@ -1,13 +1,12 @@
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import { MEALS } from "../data/test-data";
-import MealsInfo from "../components/MealsInfo";
-import Subtitle from "../components/details/subtitle";
-import List from "../components/details/List";
 import { useLayoutEffect } from "react";
+import { MEALS } from "../data/test-data";
+import List from "../components/details/List";
+import MealsInfo from "../components/MealsInfo";
 import IconButton from "../components/IconButton";
-// import { useFavouriteContext } from "../store/context/FavouriteContext";
-
+import Subtitle from "../components/details/subtitle";
 import { useDispatch, useSelector } from "react-redux";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+// import { useFavouriteContext } from "../store/context/FavouriteContext";
 import { addFavourite, removeFavourite } from "../store/redux/favouriteSlice";
 
 function MealsDetails({ route, navigation }) {
