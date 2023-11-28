@@ -1,8 +1,9 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
 import { CATEGORIES, MEALS } from "../data/test-data";
-import MealItem from "../components/MealItem";
+import MealItem from "../components/mealsList/MealItem";
 import { useLayoutEffect } from "react";
+import MealsList from "../components/mealsList/mealsList";
 
 function MealsOverView({ route, navigation }) {
   const { categoryId } = route.params;
@@ -23,11 +24,7 @@ function MealsOverView({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={mealItems}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <MealItem {...item} />}
-      />
+      <MealsList items={mealItems} />
     </View>
   );
 }
