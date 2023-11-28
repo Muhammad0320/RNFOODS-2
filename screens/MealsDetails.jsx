@@ -5,7 +5,10 @@ import Subtitle from "../components/details/subtitle";
 import List from "../components/details/List";
 import { useLayoutEffect } from "react";
 import IconButton from "../components/IconButton";
-import { useFavouriteContext } from "../store/context/FavouriteContext";
+// import { useFavouriteContext } from "../store/context/FavouriteContext";
+
+import { useDispatch, useSelector } from "react-redux";
+import { addFavourite, removeFavourite } from "../store/redux/favouriteSlice";
 
 function MealsDetails({ route, navigation }) {
   const { id } = route.params;
@@ -20,15 +23,22 @@ function MealsDetails({ route, navigation }) {
     imageUrl,
   } = MEALS.find((meals) => meals.id === id);
 
-  const { ids, addFavorite, removeFavorite } = useFavouriteContext();
+  // const { ids, addFavorite, removeFavorite } = useFavouriteContext();
+
+  const { ids } = useSelector((state) => state.favourite);
 
   const mealIsFavorite = ids.includes(id);
 
+  const dispatch = useDispatch();
+
   const handleIconButtonPress = () => {
     if (mealIsFavorite) {
-      removeFavorite(id);
+      // removeFavorite(id);
+
+      dispatch(removeFavourite({ id }));
     } else {
-      addFavorite(id);
+      // addFavorite(id);
+      dispatch(addFavourite({ id }));
     }
   };
 
