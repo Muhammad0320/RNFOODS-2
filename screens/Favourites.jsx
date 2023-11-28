@@ -8,8 +8,11 @@ function Favourites() {
 
   if (!ids.length) {
     return (
-      <View>
-        <Text> You have no favourite meal to display at the monent</Text>
+      <View style={styles.container}>
+        <Text style={styles.text}>
+          {" "}
+          You have no favourite meal to display at the monent
+        </Text>
       </View>
     );
   }
@@ -21,4 +24,16 @@ function Favourites() {
 
 export default Favourites;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignContent: "center",
+  },
+
+  text: {
+    fontWeight: "bold",
+    fontSize: 18,
+    color: "white",
+    textAlign: "center",
+  },
+});
